@@ -1,5 +1,8 @@
 FROM python:3
 ADD MishaBot.py /
+ADD scraping.py /
 ADD requirements.txt /
+ARG TbToken=production
+ENV TbToken="6488621618:AAGQ-RpZoUhnYEo9u0mMKqaWByGXqDHS2y8"
 RUN python -m pip install -r ./requirements.txt
-CMD [ "python", "./MishaBot.py" ]
+CMD [ "python", "./MishaBot.py", "./scraping.py" ]
